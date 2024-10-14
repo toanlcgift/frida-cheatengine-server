@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69f0efbd-903a-40d5-a77e-9c9872451b47}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>main.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <CommandLineArguments>gtasa</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="config.toml" />
+    <Content Include="javascript\core.js" />
+    <Content Include="javascript\core_win.js" />
+    <Content Include="javascript\java_core.js" />
+    <Content Include="javascript\mono_core.js" />
+    <Content Include="javascript\symbol.js" />
+    <Content Include="requirements.txt" />
+    <Content Include="requirements_mac.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="automation.py" />
+    <Compile Include="callback\sample.py" />
+    <Compile Include="ceserver.py" />
+    <Compile Include="ceserver_memprocfs.py" />
+    <Compile Include="define.py" />
+    <Compile Include="java_pipeserver.py" />
+    <Compile Include="lldbauto.py" />
+    <Compile Include="main.py" />
+    <Compile Include="memoryview\hexview.py" />
+    <Compile Include="memoryview\textmode.py" />
+    <Compile Include="memoryview\__init__.py" />
+    <Compile Include="mono_pipeserver.py" />
+    <Compile Include="util.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="callback" />
+    <Folder Include="javascript" />
+    <Folder Include="memoryview" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.9</Version>
+      <Description>env (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

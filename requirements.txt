@@ -1,0 +1,10 @@
+frida-tools
+packaging
+pywin32
+paramiko
+toml
+lz4
+windows-curses
+colorama
+memprocfs
+requests

@@ -1,0 +1,7 @@
+frida-tools
+packaging
+paramiko
+toml
+lz4
+applescript
+requests
